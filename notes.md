@@ -13,3 +13,6 @@
 
 ### Delete database 
 `db.drop_all()`
+
+### Tree of dependencies
+`pipdeptree`
