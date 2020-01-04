@@ -1,3 +1,6 @@
+### Import db
+`from flaskblog import db`
+
 ### Create database  
 `db.create_all()`
 
