@@ -10,7 +10,8 @@ from PIL import Image
 @app.route("/")
 @app.route("/home")
 def home():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.paginate(per_page=2, page=page)
     return render_template('home.html', posts=posts)
 
 @app.route("/about")
@@ -94,7 +95,7 @@ def new_post():
         db.session.commit()
         flash('Your post has been created!', 'success')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post', form=form, legend='Update Post')
+    return render_template('create_post.html', title='New Post', form=form, legend='New Post')
 
 
 @app.route("/post/<int:post_id>")
