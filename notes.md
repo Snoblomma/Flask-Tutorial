@@ -19,3 +19,9 @@
 
 ### Tree of dependencies
 `pipdeptree`
+
+### Environment vars
+`set "SECRET_KEY=really secret don't tell anyone"`
+
+Then to check if it's really set:  
+`echo %SECRET_KEY%`
